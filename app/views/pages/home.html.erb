@@ -1,0 +1,14 @@
+<div class="login">
+    <div class="container">
+        <div class="form">
+
+      <h1>Enter your code here</h1>
+
+      <%= form_for(:session, url: root_path) do |f| %>
+      <%= f.text_field :code, :placeholder => "Python code here" %>
+      <%= f.submit "Blah", class: "btn-submit" %>
+      <% end %>
+
+    </div>
+    </div>
+</div>
