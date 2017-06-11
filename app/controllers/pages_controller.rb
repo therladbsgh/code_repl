@@ -1,3 +1,5 @@
+require 'open3'
+
 class PagesController < ApplicationController
 
   def home
@@ -7,15 +9,23 @@ class PagesController < ApplicationController
     directory = "/tmp/"
     parsed_code = params[:code].split("\n")
     File.open(File.join(directory, 'temp.py'), 'w') do |f|
-      f.puts "import traceback"
-      f.puts "try:"
       parsed_code.each do |line|
-        f.puts "    " + line
+        f.puts line
       end
-      f.puts "except Exception,e: print 'Error: ' + e.message"
     end
-    @aa = `python /tmp/temp.py`
-    msg = {output: @aa}
+
+    stdout, stderr, status = Open3.capture3("python -m py_compile /tmp/temp.py")
+    if stderr.length > 0
+      @output = stderr
+    else
+      stdout, stderr, status = Open3.capture3("python /tmp/temp.py")
+      if stderr.length > 0
+        @output = stderr
+      else
+        @output = `python /tmp/temp.py`
+      end
+    end
+    msg = {output: @output}
     render json: msg
   end
 

@@ -18,7 +18,7 @@ function parsePython() {
         console.log(output);
 
         for (let i = 0; i < output.length; i++) {
-            $("#py-console").append("<p style=\"margin: 0;\">" + output[i] + "</p>");
+            $("#py-console").append("<pre style=\"margin: 0;\">" + output[i] + "</pre>");
         }
     });
 }
