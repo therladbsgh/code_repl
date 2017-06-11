@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
-  post '/' => 'pages#testing'
+  post '/parse-py' => 'pages#testing'
 
 end

@@ -1,14 +1,19 @@
+<%= javascript_include_tag 'python.js' %>
+
 <div class="login">
-    <div class="container">
-        <div class="form">
-
+  <div class="container">
+    <div class="form">
       <h1>Enter your code here</h1>
-
-      <%= form_for(:session, url: root_path) do |f| %>
-      <%= f.text_field :code, :placeholder => "Python code here" %>
-      <%= f.submit "Blah", class: "btn-submit" %>
-      <% end %>
-
+      <input type="text" id="py-code" class="form-control" placeholder="Python code here">
+      <span class="input-group-btn">
+        <button id="py-submit" class="btn btn-secondary" type="button">Enter</button>
+      </span>
     </div>
-    </div>
+  </div>
+</div>
+
+<div>
+  <p style="margin-bottom: 0;">Result:</p>
+  <div id="py-console">
+  </div>
 </div>
