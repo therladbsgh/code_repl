@@ -5,7 +5,21 @@ function parsePython() {
     const postParameters = {"code": code};
 
     $.post("/parse-py", postParameters, responseJSON => {
-        $("#py-console").append("<p style=\"margin: 0;\">" + responseJSON['output'] + "</p>");
+
+        let output = "";
+
+        if (responseJSON['output'] === "") {
+            output = ["None"];
+        } else {
+            output = responseJSON['output'].split("\n");
+            output.length = output.length - 1;
+        }
+
+        console.log(output);
+
+        for (let i = 0; i < output.length; i++) {
+            $("#py-console").append("<p style=\"margin: 0;\">" + output[i] + "</p>");
+        }
     });
 }
 
