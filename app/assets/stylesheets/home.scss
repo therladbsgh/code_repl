@@ -1,0 +1,29 @@
+body {
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.jumbotron {
+  border: 0;
+  margin: 0;
+}
+
+.front-page-jumbotron {
+  padding: 10%;
+  color: #fff;
+  background-image: url("hipster2.img");
+  background-size: cover;
+  background-attachment: fixed;
+  height: 92.5%;
+}
+
+.description-jumbotron {
+  padding: 5%;
+}
+
+#footer {
+  bottom: 0;
+  width: 100%;
+  height: 7.5%;
+}

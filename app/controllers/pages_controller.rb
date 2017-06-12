@@ -5,6 +5,10 @@ class PagesController < ApplicationController
   def home
   end
 
+  def tutorial
+    number = params[:id]
+  end
+
   def testing
     directory = "tmp/"
     parsed_code = params[:code].split("\n")

@@ -22,13 +22,5 @@ html, .container-fluid {
 
 body {
   height: 100%;
-  overflow: hidden;
-}
-
-#top-nav {
-  height: 7.5%;
-}
-
-#bottom-nav {
-  height: 7.5%;
+  overflow: scroll;
 }

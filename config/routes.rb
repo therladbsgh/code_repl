@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
+  get '/python/:num' => 'pages#tutorial'
+
   post '/parse-py' => 'pages#testing'
 
 end
