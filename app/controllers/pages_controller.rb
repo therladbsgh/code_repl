@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   end
 
   def testing
-    directory = "/tmp/"
+    directory = "tmp/"
     parsed_code = params[:code].split("\n")
     File.open(File.join(directory, 'temp.py'), 'w') do |f|
       parsed_code.each do |line|
@@ -14,15 +14,15 @@ class PagesController < ApplicationController
       end
     end
 
-    stdout, stderr, status = Open3.capture3("python -m py_compile /tmp/temp.py")
+    stdout, stderr, status = Open3.capture3("python -m py_compile tmp/temp.py")
     if stderr.length > 0
       @output = stderr
     else
-      stdout, stderr, status = Open3.capture3("python /tmp/temp.py")
+      stdout, stderr, status = Open3.capture3("python tmp/temp.py")
       if stderr.length > 0
         @output = stderr
       else
-        @output = `python /tmp/temp.py`
+        @output = `python tmp/temp.py`
       end
     end
     msg = {output: @output}

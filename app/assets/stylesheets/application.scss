@@ -14,3 +14,21 @@
  *= require_self
  */
 
+@import "bootstrap";
+
+html, .container-fluid {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+#top-nav {
+  height: 7.5%;
+}
+
+#bottom-nav {
+  height: 7.5%;
+}
