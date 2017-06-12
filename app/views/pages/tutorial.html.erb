@@ -3,13 +3,13 @@
     <div class="col-2 left-panel">
         <div class="card">
           <div class="card-block">
-            <h4 class="card-title">Hello World!</h4>
-            <p class="card-text">Welcome to the first Python tutorial.</p>
+            <h4 class="card-title"><%= @py.title %></h4>
+            <p class="card-text"><%= @py.description %></p>
           </div>
         </div>
     </div>
     <div class="col-6 mid-panel">
-      <div id="py-code" class="code-editor">1 + 1</div>
+      <div id="py-code" class="code-editor"><%= @py.start_code %></div>
       <nav class="navbar navbar-inverse code-nav">
         <form class="form-inline">
           <button id="py-submit" class="btn btn-primary code-nav-button" type="button">Enter</button>

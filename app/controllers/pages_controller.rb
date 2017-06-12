@@ -7,6 +7,10 @@ class PagesController < ApplicationController
 
   def tutorial
     number = params[:id]
+    @py = Python.find_by_id(params[:num])
+    if @py.nil?
+      redirect_to '/404'
+    end
   end
 
   def testing

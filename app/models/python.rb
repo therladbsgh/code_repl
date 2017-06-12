@@ -1,0 +1,2 @@
+class Python < ApplicationRecord
+end
