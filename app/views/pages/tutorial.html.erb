@@ -4,7 +4,7 @@
         <div class="card">
           <div class="card-block">
             <h4 class="card-title"><%= @py.title %></h4>
-            <p class="card-text"><%= @py.description %></p>
+            <p class="card-text"><%= simple_format(@py.description) %></p>
           </div>
         </div>
     </div>
