@@ -13,3 +13,5 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( python.js )
 Rails.application.config.assets.precompile += %w( tutorials.css )
 Rails.application.config.assets.precompile += %w( home.css )
+
+Rails.application.config.assets.precompile += %w( python/py_check_1.js )
