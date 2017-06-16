@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" id="tutorial-page" data-num= <%= @num %>>
   <div class="row" style="height: 85%">
     <div class="col-3 left-panel">
       <div class="card">
@@ -37,10 +37,3 @@
 <%= stylesheet_link_tag 'tutorials.css' %>
 <%= javascript_include_tag 'python.js' %>
 <%= javascript_include_tag 'python/py_check_' + @num + '.js' %>
-<script>
-  var editor = ace.edit("py-code");
-  editor.setTheme("ace/theme/monokai");
-  editor.getSession().setMode("ace/mode/python");
-  document.getElementById('py-code').style.fontSize='1em';
-  editor.getSession().setUseSoftTabs(true);
-</script>

@@ -1,3 +1,9 @@
+var editor = ace.edit("py-code");
+document.getElementById('py-code').style.fontSize='1em';
+editor.setTheme("ace/theme/monokai");
+editor.getSession().setMode("ace/mode/python");
+editor.getSession().setUseSoftTabs(true);
+
 function parsePython() {
 
     const code = editor.getValue();
@@ -36,9 +42,18 @@ function enableContinue() {
 $(document).ready(() => {
 
     const $button = $("#py-submit");
+    const $continueButton = $("#tutorial-continue");
 
     $button.unbind('click').bind('click', event => {
         parsePython();
-        enableContinue();
+        if (check()) {
+            enableContinue();
+        }
     });
+
+    $continueButton.unbind('click').bind('click', event => {
+        const num = $("#tutorial-page").data('num') + 1;
+        window.location.href = num;
+    });
+
 });
