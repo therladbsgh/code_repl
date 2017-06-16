@@ -1,12 +1,12 @@
 <div class="container-fluid">
   <div class="row" style="height: 85%">
     <div class="col-3 left-panel">
-        <div class="card">
-          <div class="card-block">
-            <h4 class="card-title"><%= @py.title %></h4>
-            <p class="card-text"><%= simple_format(@py.description) %></p>
-          </div>
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title"><%= @py.title %></h4>
+          <p class="card-text"><%= simple_format(@py.description) %></p>
         </div>
+      </div>
     </div>
     <div class="col-5 mid-panel">
       <div id="py-code" class="code-editor"><%= @py.start_code %></div>
@@ -17,23 +17,30 @@
       </nav>
     </div>
     <div class="col-4 right-panel">
-        <div id="py-console">
+      <div id="py-console">
       </div>
     </div>
   </div>
 </div>
 
-<nav class="navbar fixed-bottom navbar-inverse bg-inverse" id="bottom-nav">
-  <a class="navbar-brand" href="#">Fixed bottom</a>
+<nav class="navbar fixed-bottom navbar-toggleable-xl navbar-inverse bg-inverse" id="bottom-nav">
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Table of Contents</a>
+      </li>
+    </ul>
+    <button id="tutorial-continue" class="btn btn-outline-secondary" disabled>Continue</button>
+  </div>
 </nav>
 
 <%= stylesheet_link_tag 'tutorials.css' %>
 <%= javascript_include_tag 'python.js' %>
 <%= javascript_include_tag 'python/py_check_' + @num + '.js' %>
 <script>
-    var editor = ace.edit("py-code");
-    editor.setTheme("ace/theme/monokai");
-    editor.getSession().setMode("ace/mode/python");
-    document.getElementById('py-code').style.fontSize='1em';
-    editor.getSession().setUseSoftTabs(true);
+  var editor = ace.edit("py-code");
+  editor.setTheme("ace/theme/monokai");
+  editor.getSession().setMode("ace/mode/python");
+  document.getElementById('py-code').style.fontSize='1em';
+  editor.getSession().setUseSoftTabs(true);
 </script>

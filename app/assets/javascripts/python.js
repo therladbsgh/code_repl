@@ -23,6 +23,15 @@ function parsePython() {
     });
 }
 
+function enableContinue() {
+
+    const $button = $("#tutorial-continue");
+
+    $button.prop('disabled', false);
+    $button.attr('class', 'btn btn-outline-success');
+
+}
+
 // Waits for DOM to load before running
 $(document).ready(() => {
 
@@ -30,5 +39,6 @@ $(document).ready(() => {
 
     $button.unbind('click').bind('click', event => {
         parsePython();
+        enableContinue();
     });
 });
