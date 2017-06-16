@@ -12,7 +12,8 @@
       <div id="py-code" class="code-editor"><%= @py.start_code %></div>
       <nav class="navbar navbar-inverse code-nav">
         <form class="form-inline">
-          <button id="py-submit" class="btn btn-primary code-nav-button" type="button">Enter</button>
+          <!-- <button id="py-submit" class="btn btn-primary code-nav-button" type="button">Enter</button> -->
+          <a id="py-submit" tabindex="0" class="btn btn-primary code-nav-button" role="button" data-toggle="manual" data-placement="top">Enter</a>
         </form>
       </nav>
     </div>
@@ -33,6 +34,22 @@
     <button id="tutorial-continue" class="btn btn-outline-secondary" disabled>Continue</button>
   </div>
 </nav>
+
+<div id="myModal" class="modal hide fade">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%= stylesheet_link_tag 'tutorials.css' %>
 <%= javascript_include_tag 'python.js' %>

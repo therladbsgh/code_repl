@@ -44,11 +44,32 @@ $(document).ready(() => {
     const $button = $("#py-submit");
     const $continueButton = $("#tutorial-continue");
 
+    $(document).click(function (evt) {
+        if (evt.target.id == "py-submit") {
+            return;
+        } else {
+            $button.popover('hide');
+        }
+    });
+
     $button.unbind('click').bind('click', event => {
+
+        $button.popover('dispose');
+
         parsePython();
         if (check()) {
             enableContinue();
+            $button.popover({
+                title: "You passed!",
+                content: "Congratulations! Click the 'Continue' button on the bottom right to go to the next lesson."
+            })
+        } else {
+            $button.popover({
+                title: "You failed!",
+                content: "Oh no! Check your code and try again."
+            })
         }
+        $button.popover('show');
     });
 
     $continueButton.unbind('click').bind('click', event => {

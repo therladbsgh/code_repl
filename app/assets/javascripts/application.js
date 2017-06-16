@@ -14,3 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require ace-rails-ap
+//= require tether
+//= require bootstrap
