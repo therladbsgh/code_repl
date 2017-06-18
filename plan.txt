@@ -1,0 +1,19 @@
+1. Python basics
+  - Beginning
+    - Welcome
+    - What is programming
+    - Print
+    - Mathematical operations
+    - Variables
+    - Reassigning variables
+2. Data types
+    - Integers
+    - Strings
+    - Boolean
+    - Double
+2. Control Flow
+3. Functions
+4. Lists, Dictionaries
+5. Loops
+6. Objects
+7. File input / output
