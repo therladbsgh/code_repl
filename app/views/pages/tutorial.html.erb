@@ -1,5 +1,3 @@
-<%= action_cable_meta_tag %>
-
 <div class="container-fluid" id="tutorial-page" data-num= <%= @num %>>
   <div class="row" style="height: 85%">
     <div class="col-3 left-panel">
@@ -38,5 +36,6 @@
 </nav>
 
 <%= stylesheet_link_tag 'tutorials.css' %>
+<%= javascript_include_tag 'cable.js' %>
 <%= javascript_include_tag 'python.js' %>
 <%= javascript_include_tag 'python/py_check_' + @num + '.js' %>

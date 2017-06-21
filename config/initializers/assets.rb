@@ -14,5 +14,8 @@ Rails.application.config.assets.precompile += %w( python.js )
 Rails.application.config.assets.precompile += %w( tutorials.css )
 Rails.application.config.assets.precompile += %w( home.css )
 
+Rails.application.config.assets.precompile += %w( cable.js )
+Rails.application.config.assets.precompile += %w( channels/websockets.js )
+
 Rails.application.config.assets.precompile += %w( python/py_check_1.js )
 Rails.application.config.assets.precompile += %w( python/py_check_2.js )
