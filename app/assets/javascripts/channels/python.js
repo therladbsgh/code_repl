@@ -1,7 +1,23 @@
+function generateUsername () {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 20; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+}
+
 function getCookie(name) {
-  var value = "; " + document.cookie;
-  var parts = value.split("; " + name + "=");
-  if (parts.length == 2) return parts.pop().split(";").shift();
+  if (document.cookie.indexOf('username=') === -1) {
+    let username = generateUsername();
+    document.cookie = "username=" + username;
+    return username;
+  } else {
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length == 2) return parts.pop().split(";").shift();
+  }
 }
 
 App.python = App.cable.subscriptions.create({ channel: "PythonChannel", room: getCookie("username") }, {
