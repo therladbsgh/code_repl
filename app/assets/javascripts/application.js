@@ -16,3 +16,4 @@
 //= require ace-rails-ap
 //= require tether
 //= require bootstrap
+//= require_tree ./channels
